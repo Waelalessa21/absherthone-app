@@ -1,12 +1,16 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:absherthone/l10n/app_localizations.dart' show AppLocalizations;
 
 class AppButton extends StatelessWidget {
   final VoidCallback? press;
   final bool isShadowNeeded;
+  final String text;
 
   const AppButton({
+    this.text = "",
     super.key,
     this.press,
     this.isShadowNeeded = false,
@@ -16,7 +20,7 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textColor = colorScheme.onPrimary;
-    final loc = AppLocalizations.of(context)!;
+    final loc = AppLocalizations.of(context);
 
     return Container(
       decoration: BoxDecoration(
@@ -39,7 +43,7 @@ class AppButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              loc.login,
+              text != "" ? text : loc.login,
               style: TextStyle(
                   color: textColor,
                   fontWeight: FontWeight.w600,

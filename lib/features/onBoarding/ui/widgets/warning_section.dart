@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:absherthone/l10n/app_localizations.dart' show AppLocalizations;
 
 class WarningSection extends StatelessWidget {
   const WarningSection({super.key});
@@ -7,7 +7,7 @@ class WarningSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final loc = AppLocalizations.of(context)!;
+    final loc = AppLocalizations.of(context);
 
     return Container(
       height: 140,

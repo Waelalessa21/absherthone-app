@@ -3,7 +3,7 @@ import 'package:absherthone/common/routing/routes.dart';
 import 'package:absherthone/common/widgets/buttons/action_button.dart';
 import 'package:absherthone/common/widgets/buttons/record_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:absherthone/l10n/app_localizations.dart' show AppLocalizations;
 
 class FloatingActionBar extends StatefulWidget {
   final Function(bool isRecording) onRecordingChanged;
@@ -31,7 +31,7 @@ class _FloatingActionBarState extends State<FloatingActionBar> {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final loc = AppLocalizations.of(context)!;
+    final loc = AppLocalizations.of(context);
 
     return Center(
       child: Container(

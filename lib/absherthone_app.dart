@@ -2,12 +2,12 @@ import 'package:absherthone/common/provider/lang.dart';
 import 'package:absherthone/common/provider/theme.dart';
 import 'package:absherthone/common/routing/app_router.dart';
 import 'package:absherthone/common/routing/routes.dart';
+import 'package:absherthone/features/login/data/auth_provider.dart';
+import 'package:absherthone/l10n/app_localizations.dart' show AppLocalizations;
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AbsherthoneApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -32,7 +32,7 @@ class AbsherthoneApp extends StatelessWidget {
               themeMode: themeProvider.themeMode,
               debugShowCheckedModeBanner: false,
               locale: localeProvider.locale,
-              localizationsDelegates: const [
+              localizationsDelegates: [
                 AppLocalizations.delegate,
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate,
@@ -40,11 +40,31 @@ class AbsherthoneApp extends StatelessWidget {
               ],
               supportedLocales: const [Locale('en'), Locale('ar')],
               onGenerateRoute: appRouter.generateRoute,
-              initialRoute: Routes.onBoarding,
+              initialRoute: _getInitialRoute(context),
+              navigatorObservers: [RouteObserver<ModalRoute<dynamic>>()],
+              onUnknownRoute: (settings) {
+                return MaterialPageRoute(
+                  builder: (context) => Scaffold(
+                    body: Center(
+                      child: Text("Page not found: ${settings.name}"),
+                    ),
+                  ),
+                );
+              },
             );
           },
         );
       },
     );
+  }
+
+  String _getInitialRoute(BuildContext context) {
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
+
+    if (authProvider.isAuthenticated) {
+      return Routes.record;
+    }
+
+    return Routes.onBoarding;
   }
 }

@@ -2,6 +2,7 @@
 class Routes {
   static const String onBoarding = '/onBoarding';
   static const String login = '/login';
+  static const String otp = '/otp';
   static const String record = '/record';
   static const settings = '/settings';
   static const reports = '/reports';

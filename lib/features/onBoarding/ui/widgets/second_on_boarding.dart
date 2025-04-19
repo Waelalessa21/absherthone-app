@@ -3,7 +3,7 @@ import 'package:absherthone/common/routing/routes.dart';
 import 'package:absherthone/features/onBoarding/ui/widgets/scam_example.dart';
 import 'package:absherthone/features/onBoarding/ui/widgets/warning_section.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:absherthone/l10n/app_localizations.dart' show AppLocalizations;
 
 class SecondOnBoarding extends StatelessWidget {
   const SecondOnBoarding({super.key});
@@ -11,7 +11,7 @@ class SecondOnBoarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final loc = AppLocalizations.of(context)!;
+    final loc = AppLocalizations.of(context);
 
     return Padding(
       padding: const EdgeInsets.all(24.0),
@@ -43,7 +43,7 @@ class SecondOnBoarding extends StatelessWidget {
           const SizedBox(height: 60),
           OutlinedButton(
             onPressed: () {
-              context.pushNamed(Routes.login);
+              context.pushReplacementNamed(Routes.login);
             },
             style: OutlinedButton.styleFrom(
               minimumSize: const Size(250, 50),

@@ -42,6 +42,19 @@
   "show_report": "عرض التقارير",
   "delete_history": "مسح السجل",
   "detected_fraud": "الاحتيالات المكتشفة",
-  "detected_fraud_desc": "نَـبِـــه يوفر لك ملخص تفصيلي لمكالماتك"
+  "detected_fraud_desc": "نَـبِـــه يوفر لك ملخص تفصيلي لمكالماتك",
 
-  }
+  "verification_code": "رمز التحقق",
+  "enter_code_sent_to": "أدخل الرمز المرسل إلى {phoneNumber}",
+  "@enter_code_sent_to": {
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String"
+      }
+    }
+  },
+  "please_enter_valid_code": "الرجاء إدخال رمز تحقق صالح",
+  "resend_code": "إعادة إرسال الرمز",
+  "verify": "تحقق",
+  "sign_out": "تسجيل الخروج"
+}

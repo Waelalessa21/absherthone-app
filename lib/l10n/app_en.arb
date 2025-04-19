@@ -42,5 +42,19 @@
   "show_report": "Show reports",
   "delete_history": "Delete history",
   "detected_fraud": "Detected calls",
-  "detected_fraud_desc": "In Nabih you can have summary of all calls"
+  "detected_fraud_desc": "In Nabih you can have summary of all calls",
+  
+  "verification_code": "Verification Code",
+  "enter_code_sent_to": "Enter the code sent to {phoneNumber}",
+  "@enter_code_sent_to": {
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String"
+      }
+    }
+  },
+  "please_enter_valid_code": "Please enter a valid verification code",
+  "resend_code": "Resend Code",
+  "verify": "Verify",
+  "sign_out": "Sign Out"
 }

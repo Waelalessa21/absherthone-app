@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:absherthone/l10n/app_localizations.dart' show AppLocalizations;
 
 class LoginHeader extends StatelessWidget {
   const LoginHeader({super.key});
@@ -7,7 +7,7 @@ class LoginHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final loc = AppLocalizations.of(context)!;
+    final loc = AppLocalizations.of(context);
     return Column(
       children: [
         Align(

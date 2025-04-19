@@ -1,10 +1,14 @@
 import 'package:absherthone/common/layout/main_screen.dart';
+import 'package:absherthone/common/routing/extensions.dart';
+import 'package:absherthone/common/routing/routes.dart';
+import 'package:absherthone/features/login/data/auth_provider.dart';
 import 'package:absherthone/features/settings/ui/widgets/card.dart';
 import 'package:absherthone/features/settings/ui/widgets/header.dart';
 import 'package:absherthone/features/settings/ui/widgets/setting_button.dart';
 import 'package:absherthone/features/settings/ui/widgets/switch_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:absherthone/l10n/app_localizations.dart' show AppLocalizations;
+import 'package:provider/provider.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -17,10 +21,18 @@ class SettingsScreenState extends State<SettingsScreen> {
   bool isCallMonitoringEnabled = false;
   bool isNotificationsEnabled = false;
 
+  Future<void> _signOut() async {
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
+    await authProvider.signOut();
+    if (mounted) {
+      context.pushReplacementNamed(Routes.login);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final loc = AppLocalizations.of(context)!;
+    final loc = AppLocalizations.of(context);
 
     return MainScreen(
       backgroundColor: theme.colorScheme.surface,
@@ -81,6 +93,16 @@ class SettingsScreenState extends State<SettingsScreen> {
                     colors: theme.colorScheme.error,
                   ),
                 ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            SettingsCard(
+              child: SettingsButton(
+                title: loc.sign_out,
+                imagePath: "assets/icons/delete.png",
+                textColor: theme.colorScheme.error,
+                onTap: _signOut,
+                colors: theme.colorScheme.error,
               ),
             ),
             const Spacer(),

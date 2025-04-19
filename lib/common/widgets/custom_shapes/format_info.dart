@@ -1,5 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:absherthone/l10n/app_localizations.dart' show AppLocalizations;
 
 class FileFormatInfo extends StatelessWidget {
   final ColorScheme colorScheme;
@@ -8,7 +10,7 @@ class FileFormatInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final loc = AppLocalizations.of(context)!;
+    final loc = AppLocalizations.of(context);
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),

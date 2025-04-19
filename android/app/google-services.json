@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "46944490296",
-    "project_id": "absherthone",
-    "storage_bucket": "absherthone.firebasestorage.app"
+    "project_number": "637375575735",
+    "project_id": "absher-10be2",
+    "storage_bucket": "absher-10be2.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:46944490296:android:dd514c7537fa43b742e7cd",
+        "mobilesdk_app_id": "1:637375575735:android:781201cc7aa58ee60e3f32",
         "android_client_info": {
           "package_name": "com.example.absherthone"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC0XA9gTAE8-NcWu8UKjj_CPW7_ANqNfME"
+          "current_key": "AIzaSyCVrVN1NLiaLe_VhYaHSR9JdXsxeKNslJ0"
         }
       ],
       "services": {

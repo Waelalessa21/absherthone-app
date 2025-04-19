@@ -1,6 +1,6 @@
 import 'package:absherthone/features/onBoarding/ui/widgets/hero_section.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:absherthone/l10n/app_localizations.dart' show AppLocalizations;
 
 class FirstOnBoarding extends StatelessWidget {
   final VoidCallback onNextPressed;
@@ -13,7 +13,7 @@ class FirstOnBoarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final loc = AppLocalizations.of(context)!;
+    final loc = AppLocalizations.of(context);
 
     return Padding(
       padding: const EdgeInsets.all(24.0),
