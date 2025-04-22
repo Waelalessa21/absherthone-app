@@ -40,10 +40,12 @@
   "enable_notification_desc": "تلقي تنبيهات بالمكالمات المشبوهة",
   "setting_second_header": "إدارة البيانات",
   "show_report": "عرض التقارير",
+  "be_nabih": "خلك نبه! لا تشاركه أحد",
   "delete_history": "مسح السجل",
   "detected_fraud": "الاحتيالات المكتشفة",
   "detected_fraud_desc": "نَـبِـــه يوفر لك ملخص تفصيلي لمكالماتك",
-
+  "startJourney":"تجاوز تسجيل الدخول",
+  "useModel":"ابدا بتجربة النموذج",
   "verification_code": "رمز التحقق",
   "enter_code_sent_to": "أدخل الرمز المرسل إلى {phoneNumber}",
   "@enter_code_sent_to": {

@@ -3,12 +3,13 @@ import 'package:provider/provider.dart';
 import 'package:absherthone/l10n/app_localizations.dart';
 import 'package:absherthone/common/helper/validator.dart';
 import 'package:absherthone/common/widgets/pop/message_popup.dart';
-import 'package:absherthone/features/login/ui/otp_screen.dart';
+import 'package:absherthone/features/otp/ui/otp_screen.dart';
 import 'package:absherthone/features/login/data/auth_provider.dart';
 import 'package:absherthone/features/login/ui/widgets/button.dart';
 
 class LoginForm extends StatefulWidget {
-  const LoginForm({super.key});
+  final void Function(bool) setLoading;
+  const LoginForm({super.key, required this.setLoading});
 
   @override
   State<LoginForm> createState() => _LoginFormState();
@@ -18,7 +19,6 @@ class _LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
-  bool _isLoading = false;
   late AuthProvider _authProvider;
 
   @override
@@ -40,7 +40,6 @@ class _LoginFormState extends State<LoginForm> {
 
   void _onAuthStatusChanged() {
     if (!mounted) return;
-
     final phoneNumber = _phoneController.text.trim();
     final name = _nameController.text.trim();
 
@@ -63,9 +62,7 @@ class _LoginFormState extends State<LoginForm> {
       );
     }
 
-    setState(() {
-      _isLoading = _authProvider.status == AuthStatus.loading;
-    });
+    widget.setLoading(_authProvider.status == AuthStatus.loading);
   }
 
   Future<void> _submitPhone() async {
@@ -80,15 +77,10 @@ class _LoginFormState extends State<LoginForm> {
     }
 
     final phoneNumber = _phoneController.text.trim();
-    final name = _nameController.text.trim();
-
-    setState(() {
-      _isLoading = true;
-    });
+    widget.setLoading(true);
 
     try {
       await _authProvider.sendOTP(phoneNumber);
-
       if (_authProvider.status == AuthStatus.error && mounted) {
         showToastMessage(
           context,
@@ -96,10 +88,7 @@ class _LoginFormState extends State<LoginForm> {
           "assets/icons/error.png",
           isError: true,
         );
-
-        setState(() {
-          _isLoading = false;
-        });
+        widget.setLoading(false);
       }
     } catch (e) {
       if (mounted) {
@@ -109,9 +98,7 @@ class _LoginFormState extends State<LoginForm> {
           "assets/icons/error.png",
           isError: true,
         );
-        setState(() {
-          _isLoading = false;
-        });
+        widget.setLoading(false);
       }
     }
   }
@@ -119,7 +106,6 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context);
-    final authProvider = Provider.of<AuthProvider>(context);
 
     return Form(
       key: _formKey,
@@ -147,10 +133,8 @@ class _LoginFormState extends State<LoginForm> {
             validator: (value) =>
                 (value == null || value.isEmpty) ? loc.please_enter_name : null,
           ),
-          const SizedBox(height: 64),
-          _isLoading || authProvider.status == AuthStatus.loading
-              ? const CircularProgressIndicator()
-              : AppButton(press: _submitPhone)
+          const SizedBox(height: 48),
+          AppButton(press: _submitPhone)
         ],
       ),
     );

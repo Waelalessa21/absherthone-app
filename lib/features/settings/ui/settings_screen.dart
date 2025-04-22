@@ -99,7 +99,7 @@ class SettingsScreenState extends State<SettingsScreen> {
             SettingsCard(
               child: SettingsButton(
                 title: loc.sign_out,
-                imagePath: "assets/icons/delete.png",
+                imagePath: "assets/icons/logout.png",
                 textColor: theme.colorScheme.error,
                 onTap: _signOut,
                 colors: theme.colorScheme.error,

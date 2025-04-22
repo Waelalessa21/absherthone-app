@@ -1,7 +1,7 @@
 import 'package:absherthone/common/routing/routes.dart';
 import 'package:absherthone/features/login/data/auth_provider.dart';
 import 'package:absherthone/features/login/ui/login_screen.dart';
-import 'package:absherthone/features/login/ui/otp_screen.dart';
+import 'package:absherthone/features/otp/ui/otp_screen.dart';
 import 'package:absherthone/features/onBoarding/ui/on_boarding_screen.dart';
 import 'package:absherthone/features/record/ui/record_screen.dart';
 import 'package:absherthone/features/report/ui/report_screen.dart';

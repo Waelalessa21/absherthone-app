@@ -1,5 +1,3 @@
-// ignore_for_file: unused_field
-
 import 'package:absherthone/features/login/data/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +17,7 @@ class AuthProvider extends ChangeNotifier {
   String? _verificationId;
   String? _errorMessage;
   User? _user;
-  int? _resendToken;
+  int? resendToken;
   bool _isNewUser = false;
 
   // Getters
@@ -102,7 +100,7 @@ class AuthProvider extends ChangeNotifier {
           print("AuthProvider: codeSent callback triggered");
           _status = AuthStatus.codeSent;
           _verificationId = verificationId;
-          _resendToken = resendToken;
+          resendToken = resendToken;
           notifyListeners();
         },
         codeAutoRetrievalTimeout: (String verificationId) {

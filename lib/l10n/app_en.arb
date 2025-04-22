@@ -40,10 +40,13 @@
   "enable_notification_desc": "Receive notification for sucepcios calls",
   "setting_second_header": "Data management",
   "show_report": "Show reports",
+  "be_nabih": "Be Nabih! don't share it",
+
   "delete_history": "Delete history",
   "detected_fraud": "Detected calls",
   "detected_fraud_desc": "In Nabih you can have summary of all calls",
-  
+  "startJourney":"Start as guest",
+  "useModel":"Use Ai model now",
   "verification_code": "Verification Code",
   "enter_code_sent_to": "Enter the code sent to {phoneNumber}",
   "@enter_code_sent_to": {

@@ -129,6 +129,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get show_report => 'عرض التقارير';
 
   @override
+  String get be_nabih => 'خلك نبه! لا تشاركه أحد';
+
+  @override
   String get delete_history => 'مسح السجل';
 
   @override
@@ -136,6 +139,12 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get detected_fraud_desc => 'نَـبِـــه يوفر لك ملخص تفصيلي لمكالماتك';
+
+  @override
+  String get startJourney => 'تجاوز تسجيل الدخول';
+
+  @override
+  String get useModel => 'ابدا بتجربة النموذج';
 
   @override
   String get verification_code => 'رمز التحقق';

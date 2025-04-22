@@ -129,6 +129,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get show_report => 'Show reports';
 
   @override
+  String get be_nabih => 'Be Nabih! don\'t share it';
+
+  @override
   String get delete_history => 'Delete history';
 
   @override
@@ -136,6 +139,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get detected_fraud_desc => 'In Nabih you can have summary of all calls';
+
+  @override
+  String get startJourney => 'Start as guest';
+
+  @override
+  String get useModel => 'Use Ai model now';
 
   @override
   String get verification_code => 'Verification Code';

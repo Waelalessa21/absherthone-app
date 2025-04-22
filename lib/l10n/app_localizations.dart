@@ -335,6 +335,12 @@ abstract class AppLocalizations {
   /// **'Show reports'**
   String get show_report;
 
+  /// No description provided for @be_nabih.
+  ///
+  /// In en, this message translates to:
+  /// **'Be Nabih! don\'t share it'**
+  String get be_nabih;
+
   /// No description provided for @delete_history.
   ///
   /// In en, this message translates to:
@@ -352,6 +358,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'In Nabih you can have summary of all calls'**
   String get detected_fraud_desc;
+
+  /// No description provided for @startJourney.
+  ///
+  /// In en, this message translates to:
+  /// **'Start as guest'**
+  String get startJourney;
+
+  /// No description provided for @useModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Use Ai model now'**
+  String get useModel;
 
   /// No description provided for @verification_code.
   ///
